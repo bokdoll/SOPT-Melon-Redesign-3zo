@@ -2,17 +2,109 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:seekarc = "http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_main_bottom_bar"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:background="@color/colorPlayMusic"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_main_music_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_main_music_next"
+            app:layout_constraintHorizontal_bias="0.52"
+            app:layout_constraintStart_toEndOf="@+id/btn_main_music_before"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/small_play_btn" />
+
+        <com.triggertrap.seekarc.SeekArc
+            android:id="@+id/sb_main_music_play"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:padding="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_main_music_next"
+            app:layout_constraintStart_toEndOf="@+id/btn_main_music_before"
+            app:layout_constraintTop_toTopOf="parent"
+            seekarc:arcColor="#9d9986"
+            seekarc:clockwise="true"
+            seekarc:progressColor="@color/shamrock_green"
+            seekarc:rotation="360"
+            seekarc:startAngle="0"
+            seekarc:sweepAngle="360"
+            seekarc:thumb="@drawable/small_play_dot_img"
+            seekarc:touchInside="true" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="17dp"
+            android:src="@drawable/music_menu"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.48000002" />
+
+        <TextView
+            android:id="@+id/tv_main_music_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/nanumbarungothicultralight"
+            android:lineSpacingExtra="22sp"
+            android:text="This Is On You"
+            android:textColor="@android:color/white"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+            app:layout_constraintStart_toEndOf="@+id/imageView3"
+            app:lineHeight="32sp" />
+
+        <ImageView
+            android:id="@+id/btn_main_music_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/arrow_right_btn" />
+
+        <TextView
+            android:id="@+id/tv_main_singer_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/nanumbarungothicultralight"
+            android:lineSpacingExtra="24sp"
+            android:text="Maisie Peters"
+            android:textColor="@color/shamrock_green"
+            android:textSize="9sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_main_music_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_main_music_name" />
+
+        <ImageView
+            android:id="@+id/btn_main_music_before"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="63dp"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_main_music_next"
+            app:layout_constraintEnd_toStartOf="@+id/btn_main_music_next"
+            app:layout_constraintTop_toTopOf="@+id/btn_main_music_next"
+            app:srcCompat="@drawable/arrow_left_btn" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

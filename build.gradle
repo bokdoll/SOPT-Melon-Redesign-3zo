@@ -19,7 +19,10 @@ allprojects {
     repositories {
         google()
         jcenter()
-        
+        //circular seek bar
+        maven {
+            url "https://jitpack.io"
+        }
     }
 }
 
